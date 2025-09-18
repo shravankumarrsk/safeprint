@@ -1,0 +1,21 @@
+// Generate a random access code
+const generateAccessCode = () => {
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+  let result = '';
+  
+  for (let i = 0; i < 8; i++) {
+    result += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+  
+  return result;
+};
+
+// Validate access code format
+const isValidAccessCode = (code) => {
+  return /^[A-Z0-9]{8}$/.test(code);
+};
+
+module.exports = {
+  generateAccessCode,
+  isValidAccessCode,
+};
